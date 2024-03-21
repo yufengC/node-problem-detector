@@ -7,7 +7,10 @@ jobs:
   build: 
     runs-on: ubuntu-latest # 依赖的环境      
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout master branch
+        uses: actions/checkout@v2
+        with:
+          ref: v0.8.16
       - name: Build Image
         run: |
           make
